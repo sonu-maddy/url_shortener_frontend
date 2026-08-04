@@ -27,7 +27,10 @@ export default function Login() {
     try {
       setLoading(true);
       const data = await loginUser(form);
+      console.log("Response:", data);
       login(data);
+
+      console.log("Token after login:", localStorage.getItem("token"));
       toast.success("Welcome back");
       navigate("/dashboard");
     } catch (error) {

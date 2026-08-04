@@ -24,6 +24,7 @@ export default function Register() {
     try {
       setLoading(true);
       await registerUser(form);
+      console.log("Register Response:", data);
       toast.success("Account created — log in to continue");
       navigate("/login");
     } catch (err) {
