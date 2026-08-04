@@ -16,11 +16,10 @@ export default function Navbar() {
     <nav className="border-b border-[#1f1f1f] bg-[#0a0a0a]">
       <div className="max-w-6xl mx-auto px-6 md:px-8 py-5 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-3">
-          <img
-            src="YAHAN_APNA_IMAGE_URL_DAALO"
-            alt="Snip logo"
-            className="w-9 h-9 object-contain shrink-0"
-          />
+          <div className="w-10 h-10 border border-[#ffffff] flex items-center justify-center">
+            <h1 className="font-display text-xl tracking-tight leading-none">/S</h1>
+          </div>
+          
           <div>
             <h1 className="font-display text-xl tracking-tight leading-none">Snip</h1>
             <p className="text-[10px] uppercase tracking-[0.2em] text-[#6a6a65] mt-0.5">
