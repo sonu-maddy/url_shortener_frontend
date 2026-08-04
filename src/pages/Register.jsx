@@ -9,6 +9,12 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ username: "", email: "", password: "" });
 
+  const { user } = useAuth();
+
+    if (user) {
+        return <Navigate to="/dashboard" replace />;
+    }
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };

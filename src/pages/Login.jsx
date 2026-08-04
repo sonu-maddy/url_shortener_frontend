@@ -9,8 +9,15 @@ export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+  const { user } = useAuth();
+
+
   const [form, setForm] = useState({ username: "", password: "" });
   const [loading, setLoading] = useState(false);
+
+  if (user) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

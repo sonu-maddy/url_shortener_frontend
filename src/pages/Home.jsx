@@ -13,6 +13,9 @@ import {
   getGuestShortUrl,
 } from "../utils/guestLimit";
 
+import { useAuth } from "../context/AuthContext";
+import { Navigate } from "react-router-dom";
+
 const steps = [
   { n: "01", label: "Paste your link", desc: "Drop in any URL, no matter how long." },
   { n: "02", label: "Get a short one", desc: "We generate a clean, shareable link instantly." },
@@ -22,6 +25,12 @@ const steps = [
 export default function Home() {
   const [result, setResult] = useState(() => getGuestShortUrl());
   const [showUpgrade, setShowUpgrade] = useState(false);
+
+   const { user } = useAuth();
+
+    if (user) {
+        return <Navigate to="/dashboard" replace />;
+    }
 
   const handleShorten = async (url) => {
     // Guest already used their one free link — block before hitting the API
